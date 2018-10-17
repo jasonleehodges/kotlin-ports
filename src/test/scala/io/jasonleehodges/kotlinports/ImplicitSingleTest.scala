@@ -1,4 +1,4 @@
-package com.github.jasonleehodges.kotlinports
+package io.jasonleehodges.kotlinports
 
 import org.scalatest.FunSuite
 import ImplicitSingle._

@@ -1,5 +1,12 @@
-package com.github.jasonleehodges.kotlinports
+package io.jasonleehodges.kotlinports
 
+
+/** An implicit class that mimics the ternary operator from Java.
+  *
+  * Example: val obj = (true) ?? "true" :: "false"
+  *
+  * The variable obj will be assigned the string "true".
+  * */
 class ImplicitTernary (c: => Boolean, tc: => Any){
   lazy val cond = c
   lazy val thenClause = tc
