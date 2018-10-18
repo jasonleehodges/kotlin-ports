@@ -27,9 +27,12 @@ Full example:
 
 ```
 import io.jasonleehodges.kotlinports.ImplicitSingle._
+//import io.jasonleehodges.kotlinports.ImplicitSingleOrNull._ //Choose either Single or SingleOrNull so they don't implicitly step on each other
+import io.jasonleehodges.kotlinports.ImplicitTernary._
+import io.jasonleehodges.kotlinports.utils._
 
 object main extends App {
-  val mylist = List(1)
-  println(mylist.single())
+  val mylist = List("Single Item")
+  (1 + 1 == 2) ?? repeat(5) { println(mylist.single()) } :: println("Too Many Items")
 }
 ```
