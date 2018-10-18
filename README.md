@@ -2,7 +2,7 @@
 A port of useful Kotlin functionality to Scala using implicits.
 
 
-### SBT Use
+### SBT use
 
 ```
 libraryDependencies += "io.jasonleehodges" % "kotlin-ports_2.12" % "0.1.1"
