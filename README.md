@@ -22,3 +22,14 @@ objects are api calls or something multiple times.
 
 * Implicit ternary operator - this is more of a port from Java and it's not exact but it's a nice to have. Example `val x = (true) ?? 1 :: 2` will set the variable
 x to 1 because the boolean value that it implicitly modifies evaluates to true.
+
+Full example:
+
+```
+import io.jasonleehodges.kotlinports.ImplicitSingle._
+
+object main extends App {
+  val mylist = List(1)
+  println(mylist.single())
+}
+```
