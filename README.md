@@ -27,7 +27,6 @@ Full example:
 
 ```
 import io.jasonleehodges.kotlinports.ImplicitSingle._
-//import io.jasonleehodges.kotlinports.ImplicitSingleOrNull._ //Choose either Single or SingleOrNull so they don't implicitly step on each other
 import io.jasonleehodges.kotlinports.ImplicitTernary._
 import io.jasonleehodges.kotlinports.utils._
 
