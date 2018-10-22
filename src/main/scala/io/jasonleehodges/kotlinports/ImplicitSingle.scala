@@ -12,13 +12,23 @@ package io.jasonleehodges.kotlinports
   *
   * The variable item will be assigned the value 1.
   * */
-class ImplicitSingle(seq: Seq[Any]) {
-    def single(): Any ={
-      if(seq.size != 1) throw new IllegalArgumentException("Sequence does not contain only a single item.")
-      return seq.head
+class ImplicitSingle[A >: Null](seq: Seq[A]) {
+    def singleOption(seq: Seq[A]) = {
+      seq match {
+        case Seq(single) => Some(single)
+        case _ => None
+      }
     }
+
+  def single[A >: Null]() = {
+    singleOption(seq).getOrElse(throw new IllegalArgumentException("Sequence does not contain exactly one item."))
+  }
+
+  def singleOrNull[A >: Null]() = {
+    singleOption(seq).orNull
+  }
 }
 
 object ImplicitSingle {
-  implicit def seqToSingleItemSeq(seq: Seq[Any]) = new ImplicitSingle(seq)
+  implicit def seqToSingleItemSeq[A >: Null](seq: Seq[A]) = new ImplicitSingle(seq)
 }

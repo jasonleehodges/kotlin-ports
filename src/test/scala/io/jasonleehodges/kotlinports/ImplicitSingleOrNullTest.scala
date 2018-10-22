@@ -1,7 +1,7 @@
 package io.jasonleehodges.kotlinports
 
 import org.scalatest.FunSuite
-import ImplicitSingleOrNull._
+import ImplicitSingle._
 import scala.collection.mutable
 
 class ImplicitSingleOrNullTest extends FunSuite {
