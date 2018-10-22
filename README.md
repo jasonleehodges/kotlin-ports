@@ -2,7 +2,7 @@
 A port of useful Kotlin functionality to Scala using implicits.
 
 
-### SBT Use
+### SBT use
 
 ```
 libraryDependencies += "io.jasonleehodges" % "kotlin-ports_2.12" % "0.1.1"
@@ -22,3 +22,17 @@ objects are api calls or something multiple times.
 
 * Implicit ternary operator - this is more of a port from Java and it's not exact but it's a nice to have. Example `val x = (true) ?? 1 :: 2` will set the variable
 x to 1 because the boolean value that it implicitly modifies evaluates to true.
+
+Full example:
+
+```
+import io.jasonleehodges.kotlinports.ImplicitSingle._
+//import io.jasonleehodges.kotlinports.ImplicitSingleOrNull._ //Choose either Single or SingleOrNull so they don't implicitly step on each other
+import io.jasonleehodges.kotlinports.ImplicitTernary._
+import io.jasonleehodges.kotlinports.utils._
+
+object main extends App {
+  val mylist = List("Single Item")
+  (1 + 1 == 2) ?? repeat(5) { println(mylist.single()) } :: println("Too Many Items")
+}
+```
